@@ -124,8 +124,6 @@ require_once("db.php");
         }
     }
 
-    //Clientes
-
     class Clientes{
         private $Cliente_Id;
         private $Celular;
@@ -228,11 +226,6 @@ require_once("db.php");
             }
         }
     }
-    ini_set("display_errors", 1);
-
-    ini_set("display_startup_errors", 1);
-
-    error_reporting(E_ALL);
 
     class Empleados{
         private $Empleado_Id;
@@ -301,6 +294,8 @@ require_once("db.php");
             $this->Imagen;
         }
 
+        //Insert
+
         public function insertEmpleado()
         {
             try {
@@ -310,6 +305,23 @@ require_once("db.php");
                 return $e->getMessage();
             }
         }
+
+        //Eliminar Empleado 
+
+        public function delete()
+        {
+            try {
+                $stm = $this->dbCnx->prepare ("DELETE FROM Empleado WHERE Empleado_Id = ?");
+                $stm -> execute([$this->Empleado_Id]);
+                return $stm -> fetchAll();
+                echo "<script>alert('Ha sido Borrado Exitosamente');document.location='../Empleado/empleado.php'</script>";
+                
+            } catch (Exception $e) {
+                return $e->getMessage();
+            }
+        }
+
+        //Select All
 
         public function selectEmpleadoAll()
         {
@@ -392,6 +404,21 @@ require_once("db.php");
             }
         }
 
+        //Eliminar Factura 
+
+        public function delete()
+        {
+              try {
+                  $stm = $this->dbCnx->prepare ("DELETE FROM Facturas WHERE Facturas_Id = ?");
+                  $stm -> execute([$this->Facturas_Id]);
+                  return $stm -> fetchAll();
+                  echo "<script>alert('Ha sido Borrado Exitosamente');document.location='../factura/Facturas.php'</script>";
+                  
+              } catch (Exception $e) {
+                  return $e->getMessage();
+              }
+        }
+
         //Select
 
         public function selectFacturaAll()
@@ -431,8 +458,6 @@ require_once("db.php");
                 return $e->getMessage();
             }
         }
-
-        //Delete
 
         //editar
 
@@ -557,6 +582,21 @@ require_once("db.php");
             }
         }
 
+        //Eliminar Factura Detalle
+
+        public function delete()
+        {
+            try {
+                $stm = $this->dbCnx->prepare ("DELETE FROM facturaDetalle WHERE FacturasD_Id = ?");
+                $stm -> execute([$this->FacturasD_Id]);
+                return $stm -> fetchAll();
+                echo "<script>alert('Ha sido Borrado Exitosamente');document.location='../facturaD/facturaDetalle.php'</script>";
+                
+            } catch (Exception $e) {
+                return $e->getMessage();
+            }
+        }
+
         //SelectAll
 
         public function selectFacturaDAll()
@@ -630,6 +670,8 @@ require_once("db.php");
             $this->Ciudad;
         }
 
+        //Insert
+
         public function insertProveedor()
         {
             try {
@@ -639,6 +681,23 @@ require_once("db.php");
                 return $e->getMessage();
             }
         }
+
+        //Delete Proveedor
+
+        public function delete()
+        {
+            try {
+                $stm = $this->dbCnx->prepare ("DELETE FROM Proveedor WHERE Proveedor_Id = ?");
+                $stm -> execute([$this->Proveedor_Id]);
+                return $stm -> fetchAll();
+                echo "<script>alert('Ha sido Borrado Exitosamente');document.location='../proveedor/proveedor.php'</script>";
+                
+            } catch (Exception $e) {
+                return $e->getMessage();
+            }
+        }
+
+        //Select All
 
         public function selectProveedorAll()
         {
@@ -652,8 +711,6 @@ require_once("db.php");
         }
 
     }
-
-   
 
     class Productos {
         private $Productos_Id;
@@ -766,6 +823,21 @@ require_once("db.php");
             try {
                 $stm = $this->dbCnx->prepare("INSERT INTO Productos (Productos_Id, Categoria_Id, Precio_Unitario, Stock, UnidadesPedidas,Proveedor_Id, Productos_Nombre, Descontinuado ) values(?,?,?,?,?,?,?,?)");
                 $stm->execute([$this->Productos_Id, $this->Categoria_Id, $this->Precio_Unitario, $this->Stock,$this->UnidadesPedidas,$this->Proveedor_Id,$this->Productos_Nombre,$this->Descontinuado]);
+            } catch (Exception $e) {
+                return $e->getMessage();
+            }
+        }
+
+        //Delete Productos
+
+        public function delete()
+        {
+            try {
+                $stm = $this->dbCnx->prepare ("DELETE FROM Productos WHERE Productos_Id = ?");
+                $stm -> execute([$this->Productos_Id]);
+                return $stm -> fetchAll();
+                echo "<script>alert('Ha sido Borrado Exitosamente');document.location='../productos/productos.php'</script>";
+                
             } catch (Exception $e) {
                 return $e->getMessage();
             }

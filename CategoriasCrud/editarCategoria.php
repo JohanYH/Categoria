@@ -66,7 +66,7 @@ if (isset($_POST["editar"])) {
       <div class="menus">
         <a href="#" style="display: flex;gap:2px;">
           <i class="bi bi-house-door"> </i>
-          <h3 style="margin: 0px;font-weight: 800;">Home</h3>
+          <h3 style="margin: 0px;font-weight: 800;">Editar</h3>
         </a>
         <a href="#" style="display: flex;gap:2px;">
           <i class="bi bi-people"></i>

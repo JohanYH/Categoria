@@ -45,7 +45,7 @@ $all = $datos -> selectEmpleadoAll();
         <h3>Ana Yamada</h3>
       </div>
       <div class="menus">
-        <a href="#" style="display: flex;gap:2px;">
+      <a href="../Home/home.php" style="display: flex;gap:2px;">
           <i class="bi bi-house-door"> </i>
           <h3 style="margin: 0px;">Home</h3>
         </a>
@@ -120,7 +120,7 @@ $all = $datos -> selectEmpleadoAll();
               <td><?php echo $val['Direccion']?></td>
               <td><img src="<?php echo $val['Imagen']?>" width="70px" alt="..."></td>
               <td>
-                <a class="btn btn-danger" href="borrarCategoria.php?Empleado_Id=<?=$val['Empleado_Id']?>&req=delete">Borrar</a>
+                <a class="btn btn-danger" href="borrarEmpleado.php?Empleado_Id=<?=$val['Empleado_Id']?>&req=delete">Borrar</a>
               </td>
               <td>
                 <a class="btn btn-warning" href="editarCategoria.php?Empleado_Id=<?=$val['Empleado_Id']?>">Editar</a>
