@@ -911,6 +911,29 @@ require_once("db.php");
             }
         }
 
+                //Editar Productos
+
+                public function selectOneProductos()
+                {
+                    try {
+                        $stm = $this-> dbCnx -> prepare("SELECT * FROM Productos WHERE Productos_Id=?");
+                        $stm -> execute([$this->Productos_Id]);
+                        return $stm->fetchAll();
+                    } catch (Exception $e) {
+                        return $e->getMessage();
+                    }
+                }
+        
+                public function updateProductos()
+                {
+                    try {
+                        $stm = $this-> dbCnx -> prepare("UPDATE Productos SET Categoria_Id = ?, Precio_Unitario = ?, Stock = ?, UnidadesPedidas = ?, Proveedor_Id = ?, Productos_Nombre = ?, Descontinuado = ?  WHERE Productos_Id=?");
+                        $stm -> execute([$this->Categoria_Id,$this->Precio_Unitario,$this->Stock,$this->UnidadesPedidas,$this->Proveedor_Id,  $this->Productos_Nombre, $this->Descontinuado,$this->Productos_Id]);   
+                    } catch (Exception $e) {
+                        return $e->getMessage();
+                    }
+                }
+
     }
 
     
