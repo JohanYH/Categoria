@@ -63,3 +63,4 @@ CREATE TABLE Proveedor(
     Telefono VARCHAR (100) NOT NULL,
     Ciudad VARCHAR (100) NOT NULL
 );
+

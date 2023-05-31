@@ -159,9 +159,10 @@ $clientes = $datos->selectClientes();
                 <select name="Nombre" id="Nombre" class="form-control">
                   <?php
                   foreach ($nombres as $key => $val){?>
-                  <option value="<?php echo $val['Empleado_Id'] ?>">
+                  <option value="<?php echo $val['Empleado_Id']?>">
+                 
                   <?php 
-                  echo $val['Empleado_Id']
+                  echo $val['Empleado_Id'];
                   ?>
                   </option>
                   <?php

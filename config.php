@@ -354,7 +354,7 @@ require_once("db.php");
 
         public function setFacturas_Id($Facturas_Id)
         {
-            $this->FActuras_Id = $Facturas_Id;
+            $this->Facturas_Id = $Facturas_Id;
         }
 
         public function getFacturas_Id()
