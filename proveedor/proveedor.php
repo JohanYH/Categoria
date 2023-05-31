@@ -118,10 +118,10 @@ $all = $datos -> selectProveedorAll();
               <td><?php echo $val['Telefono']?></td>
               <td><?php echo $val['Ciudad']?></td>
               <td>
-                <a class="btn btn-danger" href="borrarCategoria.php?Proveedor_Id=<?=$val['Proveedor_Id']?>&req=delete">Borrar</a>
+                <a class="btn btn-danger" href="borrarProveedor.php?Proveedor_Id=<?=$val['Proveedor_Id']?>&req=delete">Borrar</a>
               </td>
               <td>
-                <a class="btn btn-warning" href="editarCategoria.php?Proveedor_Id=<?=$val['Proveedor_Id']?>">Editar</a>
+                <a class="btn btn-warning" href="editarProveedor.php?Proveedor_Id=<?=$val['Proveedor_Id']?>">Editar</a>
               </td>
             </tr>
             <?php

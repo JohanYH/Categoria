@@ -6,6 +6,10 @@ $datos = new FacturaDetalle();
 
 $all = $datos->selectFacturaDAll();
 
+$facturas = $datos->selectFactura();
+
+$productos = $datos->selectProductos();
+
 ?>
 
 <!DOCTYPE html>
@@ -114,10 +118,10 @@ $all = $datos->selectFacturaDAll();
               <td><?php echo $val['Cantidad']?></td>
               <td><?php echo $val['PrecioVenta']?></td>
               <td>
-                <a class="btn btn-danger" href="borrarCategoria.php?FacturasD_Id=<?=$val['FacturasD_Id']?>&req=delete">Borrar</a>
+                <a class="btn btn-danger" href="borrarFacturaD.php?FacturasD_Id=<?=$val['FacturasD_Id']?>&req=delete">Borrar</a>
               </td>
               <td>
-                <a class="btn btn-warning" href="editarCategoria.php?FacturasD_Id=<?=$val['FacturasD_Id']?>">Editar</a>
+                <a class="btn btn-warning" href="editarFacturaD.php?FacturasD_Id=<?=$val['FacturasD_Id']?>">Editar</a>
               </td>
             </tr>
             <?php
@@ -156,21 +160,33 @@ $all = $datos->selectFacturaDAll();
             <form class="col d-flex flex-wrap" action="registrarFacturaD.php" method="post">
             <div class="mb-1 col-12">
                 <label for="nombres" class="form-label">Factura Fecha</label>
-                <input 
-                  type="text"
-                  id="Fecha" 
-                  name="Fecha"
-                  class="form-control"  
-                />
+                <select name="Fecha" id="Fecha" class="form-control">
+                  <?php
+                  foreach ($facturas as $key => $val){?>
+                  <option value="<?php echo $val['Facturas_Id'] ?>">
+                  <?php 
+                  echo $val['Facturas_Id']
+                  ?>
+                  </option>
+                  <?php
+                  }
+                  ?>
+                </select>
               </div>
               <div class="mb-1 col-12">
                 <label for="nombres" class="form-label">Nombre Productos</label>
-                <input 
-                  type="text"
-                  id="Productos_Nombre" 
-                  name="Productos_Nombre"
-                  class="form-control"  
-                />
+                <select name="Productos_Nombre" id="Productos_Nombre" class="form-control">
+                  <?php
+                  foreach ($productos as $key => $val){?>
+                  <option value="<?php echo $val['Productos_Id'] ?>">
+                  <?php 
+                  echo $val['Productos_Id']
+                  ?>
+                  </option>
+                  <?php
+                  }
+                  ?>
+                </select>
               </div>
 
               <div class="mb-1 col-12">

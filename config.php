@@ -380,6 +380,8 @@ require_once("db.php");
             $this->Fecha;
         }
 
+        //Insert
+
         public function insertFactura()
         {
             try {
@@ -389,6 +391,8 @@ require_once("db.php");
                 return $e->getMessage();
             }
         }
+
+        //Select
 
         public function selectFacturaAll()
         {
@@ -403,6 +407,34 @@ require_once("db.php");
                 return $e->getMessage();
             }
         }
+
+        //Conectar como Select
+
+        public function selectNombres()
+        {
+            try {
+                $stm = $this->dbCnx-> prepare("SELECT Empleado.Empleado_Id FROM Empleado");
+                $stm ->execute();
+                return $stm->fetchAll();
+            } catch (Exception $e) {
+                return $e->getMessage();
+            }
+        }
+
+        public function selectClientes()
+        {
+            try {
+                $stm = $this->dbCnx ->prepare("SELECT Clientes.Cliente_Id FROM Clientes");
+                $stm -> execute();
+                return $stm->fetchAll();
+            } catch (Exception $e) {
+                return $e->getMessage();
+            }
+        }
+
+        //Delete
+
+        //editar
 
         public function selectFacturaOne()
         {
@@ -489,6 +521,8 @@ require_once("db.php");
             $this->PrecioVenta;
         }
 
+        //Insert
+
         public function insertFacturaD()
         {
             try {
@@ -498,6 +532,32 @@ require_once("db.php");
                 return $e->getMessage();
             }
         }
+
+        //Conectar con select
+
+        public function selectFactura()
+        {
+            try {
+                $stm = $this->dbCnx-> prepare("SELECT Facturas.Facturas_Id FROM Facturas");
+                $stm ->execute();
+                return $stm->fetchAll();
+            } catch (Exception $e) {
+                return $e->getMessage();
+            }
+        }
+
+        public function selectProductos()
+        {
+            try {
+                $stm = $this->dbCnx-> prepare("SELECT Productos.Productos_Id FROM Productos");
+                $stm ->execute();
+                return $stm->fetchAll();
+            } catch (Exception $e) {
+                return $e->getMessage();
+            }
+        }
+
+        //SelectAll
 
         public function selectFacturaDAll()
         {
@@ -699,6 +759,8 @@ require_once("db.php");
             $this->Descontinuado;
         }
 
+        //Insert
+
         public function insertProductos()
         {
             try {
@@ -708,6 +770,32 @@ require_once("db.php");
                 return $e->getMessage();
             }
         }
+
+        //Conectar con Select
+
+        public function selectCategoria()
+        {
+            try {
+                $stm = $this->dbCnx-> prepare("SELECT Categoria.Categoria_Id FROM Categoria");
+                $stm ->execute();
+                return $stm->fetchAll();
+            } catch (Exception $e) {
+                return $e->getMessage();
+            }
+        }
+
+        public function selectProveedor()
+        {
+            try {
+                $stm = $this->dbCnx-> prepare("SELECT Proveedor.Proveedor_Id FROM Proveedor");
+                $stm ->execute();
+                return $stm->fetchAll();
+            } catch (Exception $e) {
+                return $e->getMessage();
+            }
+        }
+
+        //Select
 
         public function selectProductosAll()
         {

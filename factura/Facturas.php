@@ -11,6 +11,10 @@ $datos = new Factura();
 
 $all = $datos->selectFacturaAll();
 
+$nombres = $datos->selectNombres();
+
+$clientes = $datos->selectClientes();
+
 ?>
 
 <!DOCTYPE html>
@@ -152,22 +156,34 @@ $all = $datos->selectFacturaAll();
             <form class="col d-flex flex-wrap" action="registrarFactura.php" method="post">
               <div class="mb-1 col-12">
                 <label for="Nombre" class="form-label">Empleado Nombre</label>
-                <input 
-                  type="text"
-                  id="Nombre" 
-                  name="Nombre"
-                  class="form-control"  
-                />
+                <select name="Nombre" id="Nombre" class="form-control">
+                  <?php
+                  foreach ($nombres as $key => $val){?>
+                  <option value="<?php echo $val['Empleado_Id'] ?>">
+                  <?php 
+                  echo $val['Empleado_Id']
+                  ?>
+                  </option>
+                  <?php
+                  }
+                  ?>
+                </select>
               </div>
 
               <div class="mb-1 col-12">
                 <label for="Cliente" class="form-label">Clientes</label>
-                <input 
-                  type="text"
-                  id="Compañia"
-                  name="Compañia"
-                  class="form-control"  
-                />
+                <select name="Compañia" id="Compañia" class="form-control">
+                  <?php
+                  foreach ($clientes as $key => $val){?>
+                  <option value="<?php echo $val['Cliente_Id'] ?>">
+                  <?php 
+                  echo $val['Cliente_Id']
+                  ?>
+                  </option>
+                  <?php
+                  }
+                  ?>
+                </select>
               </div>
 
               <div class="mb-1 col-12">

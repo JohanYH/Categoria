@@ -6,6 +6,10 @@ $datos = new Productos();
 
 $all = $datos -> selectProductosAll();
 
+$categoria = $datos->selectCategoria();
+
+$proveedor = $datos->selectProveedor();
+
 ?>
 
 <!DOCTYPE html>
@@ -116,10 +120,10 @@ $all = $datos -> selectProductosAll();
               <td><?php echo $val['Productos_Nombre']?></td>
               <td><?php echo $val['Descontinuado']?></td>
               <td>
-                <a class="btn btn-danger" href="borrarCategoria.php?Productos_Id=<?=$val['Productos_Id']?>&req=delete">Borrar</a>
+                <a class="btn btn-danger" href="borrarProductos.php?Productos_Id=<?=$val['Productos_Id']?>&req=delete">Borrar</a>
               </td>
               <td>
-                <a class="btn btn-warning" href="editarCategoria.php?Productos_Id=<?=$val['Productos_Id']?>">Editar</a>
+                <a class="btn btn-warning" href="editarProductos.php?Productos_Id=<?=$val['Productos_Id']?>">Editar</a>
               </td>
             </tr>
             <?php
@@ -158,12 +162,18 @@ $all = $datos -> selectProductosAll();
             <form class="col d-flex flex-wrap" action="registrarProducto.php" method="post">
             <div class="mb-1 col-12">
                 <label for="Nombre" class="form-label">Categoria Id</label>
-                <input 
-                  type="text"
-                  id="Nombre"
-                  name="Nombre"
-                  class="form-control"  
-                />
+                <select name="Nombre" id="Nombre" class="form-control">
+                  <?php
+                  foreach ($categoria as $key => $val){?>
+                  <option value="<?php echo $val['Categoria_Id'] ?>">
+                  <?php 
+                  echo $val['Categoria_Id']
+                  ?>
+                  </option>
+                  <?php
+                  }
+                  ?>
+                </select>
               </div>
               <div class="mb-1 col-12">
                 <label for="Precio_Unitario" class="form-label">Precio Unitario</label>
@@ -195,12 +205,18 @@ $all = $datos -> selectProductosAll();
               </div>
               <div class="mb-1 col-12">
                 <label for="NombreP" class="form-label">Proveedor Id</label>
-                <input 
-                  type="text"
-                  id="NombreP"
-                  name="NombreP"
-                  class="form-control"  
-                />
+                <select name="NombreP" id="NombreP" class="form-control">
+                  <?php
+                  foreach ($proveedor as $key => $val){?>
+                  <option value="<?php echo $val['Proveedor_Id'] ?>">
+                  <?php 
+                  echo $val['Proveedor_Id']
+                  ?>
+                  </option>
+                  <?php
+                  }
+                  ?>
+                </select>
               </div>
               <div class="mb-1 col-12">
                 <label for="Productos_Nombre" class="form-label">Nombre Productos</label>
