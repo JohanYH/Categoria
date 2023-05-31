@@ -84,7 +84,7 @@ $productos = $datos->selectProductos();
 
     <div class="parte-media">
       <div style="display: flex; justify-content: space-between;">
-        <h2>Facutra Detalle</h2>
+        <h2>Factura Detalle</h2>
         <button class="btn-m" data-bs-toggle="modal" data-bs-target="#registrarFacturaD"><i class="bi bi-person-add " style="color: rgb(255, 255, 255);" ></i></button>
       </div>
       <div class="menuTabla contenedor2">
@@ -97,7 +97,6 @@ $productos = $datos->selectProductos();
               <th scope="col">Cantidad</th>
               <th scope="col">PrecioVenta</th>
               <th scope="col">Eliminar</th>
-              <th scope="col">Editar</th>
             </tr>
           </thead>
           <tbody class="" id="tabla">
@@ -119,9 +118,6 @@ $productos = $datos->selectProductos();
               <td><?php echo $val['PrecioVenta']?></td>
               <td>
                 <a class="btn btn-danger" href="borrarFacturaD.php?FacturasD_Id=<?=$val['FacturasD_Id']?>&req=delete">Borrar</a>
-              </td>
-              <td>
-                <a class="btn btn-warning" href="editarFacturaD.php?FacturasD_Id=<?=$val['FacturasD_Id']?>">Editar</a>
               </td>
             </tr>
             <?php
@@ -162,12 +158,12 @@ $productos = $datos->selectProductos();
                 <label for="nombres" class="form-label">Factura Fecha</label>
                 <select name="Fecha" id="Fecha" class="form-control">
                   <?php
-                  foreach ($facturas as $key => $val){?>
-                  <option value="<?php echo $val['Facturas_Id'] ?>">
-                  <?php 
-                  echo $val['Facturas_Id']
-                  ?>
-                  </option>
+                  foreach ($facturas as $factura/* $key => $val */){
+                    $idFacturas = $factura ['Facturas_Id'];
+                    $Fecha = $factura['Fecha'];
+                    
+                    ?>
+                  <option value="<?php echo intval($idFacturas)?>"><?php echo $Fecha?></option>
                   <?php
                   }
                   ?>
@@ -177,15 +173,12 @@ $productos = $datos->selectProductos();
                 <label for="nombres" class="form-label">Nombre Productos</label>
                 <select name="Productos_Nombre" id="Productos_Nombre" class="form-control">
                   <?php
-                  foreach ($productos as $key => $val){?>
-                  <option value="<?php echo $val['Productos_Id'] ?>">
-                  <?php 
-                  echo $val['Productos_Id']
-                  ?>
-                  </option>
-                  <?php
-                  }
-                  ?>
+                  foreach ($productos as $producto){
+                    $idProducto = $producto ["Productos_Id"];
+                    $nombreProductos = $producto["Productos_Nombre"];
+                    ?>
+                  <option value="<?php echo intval($idProducto) ?>"><?php echo $nombreProductos?></option>
+                  <?php } ?>
                 </select>
               </div>
 

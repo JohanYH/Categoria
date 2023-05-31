@@ -72,30 +72,6 @@ if (isset($_POST["editar"])) {
           <i class="bi bi-people"></i>
           <h3 style="margin: 0px;">Categorias</h3>
         </a>
-        <a href="#" style="display: flex;gap:1px;">
-          <i class="bi bi-people"></i>
-          <h3 style="margin: 0px;font-weight: 800;">Clientes</h3>
-        </a>
-        <a href="#" style="display: flex;gap:1px;">
-          <i class="bi bi-people"></i>
-          <h3 style="margin: 0px;font-weight: 800;">Empleado</h3>
-        </a>
-        <a href="#" style="display: flex;gap:1px;">
-          <i class="bi bi-people"></i>
-          <h3 style="margin: 0px;font-weight: 800;">Factura</h3>
-        </a>
-        <a href="#" style="display: flex;gap:1px;">
-          <i class="bi bi-people"></i>
-          <h3 style="margin: 0px;font-weight: 800;">Factura Detalle</h3>
-        </a>
-        <a href="#" style="display: flex;gap:1px;">
-          <i class="bi bi-people"></i>
-          <h3 style="margin: 0px;font-weight: 800;">Productos</h3>
-        </a>
-        <a href="#" style="display: flex;gap:1px;">
-          <i class="bi bi-people"></i>
-          <h3 style="margin: 0px;font-weight: 800;">Proveedor</h3>
-        </a>
       </div>
     </div>
 
@@ -129,12 +105,14 @@ if (isset($_POST["editar"])) {
 
               <div class="mb-1 col-12">
                 <label for="logros" class="form-label">Imagen</label>
-                <select name="Imagen" id="Imagen" class="form-control">
-                  <?php
-                    foreach($imagenes as $Imagen): ?>
-                    <option value="<?php echo $Imagen; ?>" <?php echo ($val["Imagen"] == $Imagen)? 'selected' : '' ;?>><?php echo $Imagen;?></option>
-                    <?php endforeach?>
-                </select>
+                <input 
+                  type="text"
+                  id="Imagen"
+                  name="Imagen"
+                  class="form-control"  
+                  value="<?php echo $val["Imagen"];?>"
+                 
+                />
               </div>
 
               <div class=" col-12 m-2">

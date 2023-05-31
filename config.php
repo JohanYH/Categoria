@@ -334,6 +334,29 @@ require_once("db.php");
             }
         }
 
+        //Editar Empleado
+
+        public function selectOneEmpleado()
+        {
+            try {
+                $stm = $this-> dbCnx -> prepare( "SELECT * FROM Empleado WHERE Empleado_Id = ?");
+                $stm -> execute ([$this->Empleado_Id]);
+                return $stm -> fetchAll();
+            }   catch (Exception $e) {
+                return $e->getMessage();
+            }
+        }
+
+        public function updateEmpleado()
+        {
+            try {
+                $stm = $this-> dbCnx ->prepare ("UPDATE Empleado SET Mobile = ?, Direccion = ?, Imagen = ? , Empleado_Id = ?");
+                $stm -> execute([$this->Mobile, $this-> Direccion, $this->Imagen , $this->Empleado_Id ]);
+            } catch (Exception $e) {
+                return $e->getMessage();
+            }
+        }
+
     }
 
     class Factura{
@@ -440,7 +463,7 @@ require_once("db.php");
         public function selectNombres()
         {
             try {
-                $stm = $this->dbCnx-> prepare("SELECT Empleado.Empleado_Id FROM Empleado");
+                $stm = $this->dbCnx-> prepare("SELECT Empleado_Id, Empleado_Nombre FROM Empleado");
                 $stm ->execute();
                 return $stm->fetchAll();
             } catch (Exception $e) {
@@ -451,26 +474,9 @@ require_once("db.php");
         public function selectClientes()
         {
             try {
-                $stm = $this->dbCnx ->prepare("SELECT Clientes.Cliente_Id FROM Clientes");
+                $stm = $this->dbCnx ->prepare("SELECT Cliente_Id, Compañia FROM Clientes");
                 $stm -> execute();
                 return $stm->fetchAll();
-            } catch (Exception $e) {
-                return $e->getMessage();
-            }
-        }
-
-        //editar
-
-        public function selectFacturaOne()
-        {
-            try {
-                $stm = $this->dbCnx->prepare("SELECT Facturas.Facturas_Id, Empleado.Empleado_Nombre, Clientes.Compañia, Facturas.Fecha FROM Facturas 
-                INNER JOIN Empleado ON Facturas.Empleado_Id = Empleado.Empleado_Id
-                INNER JOIN Clientes ON Facturas.Cliente_Id = Clientes.Cliente_Id
-                WHERE Facturas.Facturas_Id = ?;");
-                
-                $stm->execute([$this->Facturas_Id]);
-                return $stm -> fetchAll();
             } catch (Exception $e) {
                 return $e->getMessage();
             }
@@ -563,7 +569,7 @@ require_once("db.php");
         public function selectFactura()
         {
             try {
-                $stm = $this->dbCnx-> prepare("SELECT Facturas.Facturas_Id FROM Facturas");
+                $stm = $this->dbCnx-> prepare("SELECT Facturas_Id, Fecha FROM Facturas");
                 $stm ->execute();
                 return $stm->fetchAll();
             } catch (Exception $e) {
@@ -574,7 +580,7 @@ require_once("db.php");
         public function selectProductos()
         {
             try {
-                $stm = $this->dbCnx-> prepare("SELECT Productos.Productos_Id FROM Productos");
+                $stm = $this->dbCnx-> prepare("SELECT Productos_Id, Productos_Nombre FROM Productos");
                 $stm ->execute();
                 return $stm->fetchAll();
             } catch (Exception $e) {
@@ -705,6 +711,29 @@ require_once("db.php");
                 $stm = $this-> dbCnx -> prepare("SELECT * FROM Proveedor");
                 $stm -> execute();
                 return $stm->fetchAll();
+            } catch (Exception $e) {
+                return $e->getMessage();
+            }
+        }
+
+        //Editar Proveedor
+
+        public function selectOneProveedor()
+        {
+            try {
+                $stm = $this-> dbCnx -> prepare("SELECT * FROM Proveedor WHERE Proveedor_Id=?");
+                $stm -> execute([$this->Proveedor_Id]);
+                return $stm->fetchAll();
+            } catch (Exception $e) {
+                return $e->getMessage();
+            }
+        }
+
+        public function updateProveedor()
+        {
+            try {
+                $stm = $this-> dbCnx -> prepare("UPDATE Proveedor SET Proveedor_Nombre = ?, Telefono = ?, Ciudad = ?  WHERE Proveedor_Id=?");
+                $stm -> execute([$this->Proveedor_Nombre,$this->Telefono, $this->Ciudad,$this->Proveedor_Id]);   
             } catch (Exception $e) {
                 return $e->getMessage();
             }
@@ -848,7 +877,7 @@ require_once("db.php");
         public function selectCategoria()
         {
             try {
-                $stm = $this->dbCnx-> prepare("SELECT Categoria.Categoria_Id FROM Categoria");
+                $stm = $this->dbCnx-> prepare("SELECT Categoria_Id, Categoria_Nombre FROM Categoria");
                 $stm ->execute();
                 return $stm->fetchAll();
             } catch (Exception $e) {
@@ -859,7 +888,7 @@ require_once("db.php");
         public function selectProveedor()
         {
             try {
-                $stm = $this->dbCnx-> prepare("SELECT Proveedor.Proveedor_Id FROM Proveedor");
+                $stm = $this->dbCnx-> prepare("SELECT Proveedor_Id, Proveedor_Nombre FROM Proveedor");
                 $stm ->execute();
                 return $stm->fetchAll();
             } catch (Exception $e) {

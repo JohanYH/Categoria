@@ -101,7 +101,6 @@ $clientes = $datos->selectClientes();
               <th scope="col">Cliente</th>
               <th scope="col">Fecha</th>
               <th scope="col">Eliminar</th>
-              <th scope="col">Editar</th>
             </tr>
           </thead>
           <tbody class="" id="tabla">
@@ -117,9 +116,6 @@ $clientes = $datos->selectClientes();
               <td><?php echo $val['Fecha'] ?></td>
               <td>  
                 <a class="btn btn-danger" href="borrarFacturas.php?Facturas_Id=<?=$val['Facturas_Id']?>&req=delete">Borrar</a>
-              </td>
-              <td>
-                <a class="btn btn-warning" href="editarFacturas.php?Facturas_Id=<?=$val['Facturas_Id']?>">Editar</a>
               </td>
             </tr>
           </tbody>
@@ -158,16 +154,12 @@ $clientes = $datos->selectClientes();
                 <label for="Nombre" class="form-label">Empleado Nombre</label>
                 <select name="Nombre" id="Nombre" class="form-control">
                   <?php
-                  foreach ($nombres as $key => $val){?>
-                  <option value="<?php echo $val['Empleado_Id']?>">
-                 
-                  <?php 
-                  echo $val['Empleado_Id'];
-                  ?>
-                  </option>
-                  <?php
-                  }
-                  ?>
+                  foreach ($nombres as $nombre /* $key => $val */){
+                    $idEmpleado = $nombre['Empleado_Id'];
+                    $nombreEmpleado = $nombre['Empleado_Nombre'];
+                    ?>
+                  <option value="<?php echo intval($idEmpleado)?>"><?php echo $nombreEmpleado?></option>
+                  <?php } ?>
                 </select>
               </div>
 
@@ -175,15 +167,12 @@ $clientes = $datos->selectClientes();
                 <label for="Cliente" class="form-label">Clientes</label>
                 <select name="Compañia" id="Compañia" class="form-control">
                   <?php
-                  foreach ($clientes as $key => $val){?>
-                  <option value="<?php echo $val['Cliente_Id'] ?>">
-                  <?php 
-                  echo $val['Cliente_Id']
-                  ?>
-                  </option>
-                  <?php
-                  }
-                  ?>
+                  foreach ($clientes as $cliente){
+                    $idCliente = $cliente['Cliente_Id'];
+                    $Compañia = $cliente['Compañia'];
+                    ?>
+                  <option value="<?php echo intval($idCliente) ?>"><?php echo $Compañia?></option>
+                  <?php } ?>
                 </select>
               </div>
 

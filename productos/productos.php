@@ -164,12 +164,11 @@ $proveedor = $datos->selectProveedor();
                 <label for="Nombre" class="form-label">Categoria Id</label>
                 <select name="Nombre" id="Nombre" class="form-control">
                   <?php
-                  foreach ($categoria as $key => $val){?>
-                  <option value="<?php echo $val['Categoria_Id'] ?>">
-                  <?php 
-                  echo $val['Categoria_Id']
-                  ?>
-                  </option>
+                  foreach ($categoria as $categorias){
+                    $idCategoria = $categorias["Categoria_Id"];
+                    $nombreCategoria = $categorias["Categoria_Nombre"];
+                    ?>
+                  <option value="<?php echo intval($idCategoria) ?>"><?php echo $nombreCategoria?></option>
                   <?php
                   }
                   ?>
@@ -207,19 +206,15 @@ $proveedor = $datos->selectProveedor();
                 <label for="NombreP" class="form-label">Proveedor Id</label>
                 <select name="NombreP" id="NombreP" class="form-control">
                   <?php
-                  foreach ($proveedor as $key => $val){?>
-                  <option value="<?php echo $val['Proveedor_Id'] ?>">
-                  <?php 
-                  echo $val['Proveedor_Id']
-                  ?>
-                  </option>
+                  foreach ($proveedor as $proveedores){ $idProveedor = $proveedores ['Proveedor_Id']; $nombreProveedor = $proveedores ['Proveedor_Nombre']; ?>
+                  <option value="<?php echo intval($idProveedor) ?>"><?php echo $nombreProveedor ?></option>
                   <?php
                   }
                   ?>
                 </select>
               </div>
               <div class="mb-1 col-12">
-                <label for="Productos_Nombre" class="form-label">Nombre Productos</label>
+                <label for="Productos_Nombre" class="form-label">Nombre del Producto</label>
                 <input 
                   type="text"
                   id="Productos_Nombre"

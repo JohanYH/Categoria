@@ -123,7 +123,7 @@ $all = $datos -> selectEmpleadoAll();
                 <a class="btn btn-danger" href="borrarEmpleado.php?Empleado_Id=<?=$val['Empleado_Id']?>&req=delete">Borrar</a>
               </td>
               <td>
-                <a class="btn btn-warning" href="editarCategoria.php?Empleado_Id=<?=$val['Empleado_Id']?>">Editar</a>
+                <a class="btn btn-warning" href="editarEmpleado.php?Empleado_Id=<?=$val['Empleado_Id']?>">Editar</a>
               </td>
             </tr>
             <?php
