@@ -69,9 +69,10 @@ CREATE TABLE Users(
     IdCamper INT NOT NULL,
     Email VARCHAR(90) NOT NULL,
     UserName VARCHAR(70) NOT NULL,
+    tiposUsuario VARCHAR(50) NOT NULL,
     Password VARCHAR (72) NOT NULL,
     FOREIGN KEY (IdCamper) REFERENCES Empleado(Empleado_Id)
 
 );
 
-ALTER TABLE Users ADD tipoUsuario VARCHAR(50);
+/* ALTER TABLE Users ADD tipoUsuario VARCHAR(50); Para agregar algo a una tabla*/

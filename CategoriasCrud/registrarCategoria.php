@@ -6,7 +6,7 @@ ini_set("display_startup_errors", 1);
 error_reporting(E_ALL);
 
     if (isset($_POST["guardar"])) {
-        require_once (".../Config/config.php");
+        require_once ("../Config/config.php");
 
         $categories = new Categoria();
 
