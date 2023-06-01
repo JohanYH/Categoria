@@ -38,13 +38,20 @@ body{
   .parte-derecho {
     background-color: #faeded;
     width: 25%;
-    padding: 20px;
+    padding: 50px;
     border-radius: 10px;
+    
    
 
    
    
   
+  }
+  
+  .bi{
+    margin-top: 4px;
+    font-size: 20px;
+    
   }
   .imagenPerfil{
     border-radius: 100%;

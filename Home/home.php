@@ -38,44 +38,39 @@ session_start();
       </div>
       <div class="menus">
         <a href="#" style="display: flex;gap:2px;">
-          <i class="bi bi-house-door"> </i>
-          <h3 style="margin: 0px;font-weight: 800;">Home</h3>
+          <i class="bi bi-house-door"></i>
+          <h3 style="margin: 8px;font-weight: 800;">Home</h3>
         </a>
         <a href="../CategoriasCrud/categorias.php" style="display: flex;gap:1px;">
-          <i class="bi bi-people"></i>
-          <h3 style="margin: 0px;font-weight: 800;">Categoria</h3>
+          <i class="bi bi-calendar-plus"></i>
+          <h3 style="margin: 8px;font-weight: 800;">Categoria</h3>
         </a>
         <a href="../Clientes/clientes.php" style="display: flex;gap:1px;">
-          <i class="bi bi-people"></i>
-          <h3 style="margin: 0px;font-weight: 800;">Clientes</h3>
+          <i class="bi bi-person-circle"></i>
+          <h3 style="margin: 8px;font-weight: 800;">Clientes</h3>
         </a>
         <a href="../Empleado/empleado.php" style="display: flex;gap:1px;">
           <i class="bi bi-people"></i>
-          <h3 style="margin: 0px;font-weight: 800;">Empleado</h3>
+          <h3 style="margin: 8px;font-weight: 800;">Empleado</h3>
         </a>
         <a href="../factura/Facturas.php" style="display: flex;gap:1px;">
-          <i class="bi bi-people"></i>
-          <h3 style="margin: 0px;font-weight: 800;">Factura</h3>
+          <i class="bi bi-journal-text"></i>
+          <h3 style="margin: 8px;font-weight: 800;">Factura</h3>
         </a>
         <a href="../facturaD/facturaDetalle.php" style="display: flex;gap:1px;">
-          <i class="bi bi-people"></i>
-          <h3 style="margin: 0px;font-weight: 800;">Factura Detalle</h3>
+          <i class="bi bi-journals"></i>
+          <h3 style="margin: 8px;font-weight: 800;">Factura Detalle</h3>
         </a>
         <a href="../productos/productos.php" style="display: flex;gap:1px;">
-          <i class="bi bi-people"></i>
-          <h3 style="margin: 0px;font-weight: 800;">Productos</h3>
+          <i class="bi bi-shop"></i>
+          <h3 style="margin: 8px;font-weight: 800;">Productos</h3>
         </a>
         <a href="../proveedor/proveedor.php" style="display: flex;gap:1px;">
-          <i class="bi bi-people"></i>
-          <h3 style="margin: 0px;font-weight: 800;">Proveedor</h3>
+          <i class="bi bi-truck"></i>
+          <h3 style="margin: 8px;font-weight: 800;">Proveedor</h3>
         </a>
       
         </a>
-        <a href="../Login/Registrarse.php" style="display: flex;gap:2px;color: brown;">
-          <i class="bi bi-x-square"></i>
-          <h3 style="margin: 0px;">salir</h3>
-        </a>
-
 
       </div>
     </div>
@@ -89,7 +84,11 @@ session_start();
 
     
     <div class="parte-derecho ">
-      <p>Cargando...</p> 
+      <!-- <p>Cargando...</p>  -->
+      <a href="../Login/Registrarse.php" style="display: flex;gap:2px;color: brown;">
+          <i class="bi bi-x-square"></i>
+          <h3 style="margin: 0px; font-size: 30px;">Cerrar Sesion</h3>
+      </a>
     </div>
 
 
