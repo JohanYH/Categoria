@@ -8,7 +8,7 @@ error_reporting(E_ALL);
 require_once("../Config/db.php");
 require_once("../Config/dbCnx.php");
 
-class Login extends SuperMarket{
+class LoginUser extends SuperMarket{
     private $Id;
     private $Email;
     private $Password;
@@ -55,6 +55,29 @@ class Login extends SuperMarket{
     {
         try {
             $stm = $this->dbCnx->prepare("SELECT * FROM Users");
+            $stm-> execute();
+            return $stm -> fetchAll();
+        } catch (Exception $e) {
+            $e -> getMessage();
+        }
+    }
+
+    public function LoginUsers()
+    {
+        try {
+            $stm = $this->dbCnx->prepare("SELECT * FROM Users WHERE Email = ? AND Password = ?");
+            $stm->execute([$this->Email,md5($this->Password)]);
+            $usuario = $stm->fetchAll();
+            if (count($usuario)> 0) {
+                session_start();
+                $_SESSION['Id'] = $usuario[0]['Id'];
+                $_SESSION['Email'] = $usuario[0]['Email'];
+                $_SESSION['Password'] = $usuario[0]['Password'];
+                $_SESSION['UserName'] = $usuario[0]['UserName'];
+                return true;
+            }else {
+                false;
+            }
         } catch (Exception $e) {
             $e -> getMessage();
         }

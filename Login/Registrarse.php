@@ -21,28 +21,28 @@
             <img src="img/camper.png" alt="" class="logo"></div>
             <div class="d-flex justify-content-center align-items-center"><h1 style="font-weight: 800;">BIENVENIDOS</h1></div>
             <div  class="d-flex justify-content-center align-items-center" >
-                <form action="loguearse.php" method="POST">
+                <form action="ingresar.php" method="POST">
                     <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
+                    <label for="Email" class="form-label">Email</label>
                         <input 
                           type="text"
-                          id="email"
-                          name="email"
+                          id="Email"
+                          name="Email"
                           class="form-control"  
                         />
                       <div id="emailHelp" class="form-text">Mañana es una excusa maravillosa, ¿No crees?</div>
                     </div>
                     <div class="mb-3">
-                    <label for="password" class="form-label">Password</label>
+                    <label for="Password" class="form-label">Password</label>
                         <input 
                           type="password"
-                          id="password"
-                          name="password"
+                          id="Password"
+                          name="Password"
                           class="form-control"  
                         />
                     </div>
                  
-                    <input type="submit" class="btn btn-primary" value="loguearse" name="loguearse"/>
+                    <input type="submit" class="btn btn-primary" value="Iniciar" name="Iniciar"/>
                   </form>
                   
 
@@ -62,14 +62,14 @@
                 
              <div  class="d-flex justify-content-center align-items-center" >
                 
-                <form action="registrarse.php" method="POST">
+                <form action="NewUser.php" method="POST">
                     <h1 class="m-5" style="font-weight: 800;">REGISTRAR USUARIO</h1>
                     <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
                         <input 
                           type="text"
-                          id="email"
-                          name="email"
+                          id="Email"
+                          name="Email"
                           class="form-control"  
                         />
                     </div>
@@ -77,17 +77,17 @@
                         <label for="username" class="form-label">User Name</label>
                         <input 
                           type="text"
-                          id="username"
-                          name="username"
+                          id="UserName"
+                          name="UserName"
                           class="form-control"  
                         />
                     </div>
                     <div class="mb-3">
-                    <label for="password" class="form-label">Password</label>
+                    <label for="Password" class="form-label">Password</label>
                         <input 
                           type="password"
-                          id="password"
-                          name="password"
+                          id="Password"
+                          name="Password"
                           class="form-control"  
                         />
                     </div>
@@ -95,7 +95,7 @@
                       <input type="checkbox" class="form-check-input" id="exampleCheck1">
                       <label class="form-check-label" for="exampleCheck1">Check me out</label>
                     </div>
-                    <input type="submit" class="btn btn-primary" value="registrarse" name="registrarse"/>
+                    <input type="submit" class="btn btn-primary" value="Registrarse" name="registrarse"/>
                   </form>
 
             </div>
