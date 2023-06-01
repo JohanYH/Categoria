@@ -117,14 +117,7 @@ $all = $datos -> selectProveedorAll();
               <td><?php echo $val['Telefono']?></td>
               <td><?php echo $val['Ciudad']?></td>
               <td>
-                <?php
-                if (condition) {
-                  echo '<a class="btn btn-danger" href="borrarProveedor.php?Proveedor_Id=<?=$val["Proveedor_Id"]?>&req=delete">Borrar</a>';
-                }else {
-                  # code...
-                }
-                ?>
-                
+                  <a class="btn btn-danger" href="borrarProveedor.php?Proveedor_Id=<?=$val["Proveedor_Id"]?>&req=delete">Borrar</a>
               </td>
               <td>
                 <a class="btn btn-warning" href="editarProveedor.php?Proveedor_Id=<?=$val['Proveedor_Id']?>">Editar</a>

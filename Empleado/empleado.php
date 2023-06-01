@@ -118,14 +118,8 @@ $all = $datos -> selectEmpleadoAll();
               <td><?php echo $val['Mobile']?></td>
               <td><?php echo $val['Direccion']?></td>
               <td><img src="<?php echo $val['Imagen']?>" width="70px" alt="..."></td>
-              <td><?php
-                if (condition) {
-                  echo '<a class="btn btn-danger" href="borrarEmpleado.php?Empleado_Id=<?=$val["Empleado_Id"]?>&req=delete">Borrar</a>';
-                }else {
-                  # code...
-                }
-              ?>
-                
+              <td>
+                <a class="btn btn-danger" href="borrarEmpleado.php?Empleado_Id=<?=$val["Empleado_Id"]?>&req=delete">Borrar</a>
               </td>
               <td>
                 <a class="btn btn-warning" href="editarEmpleado.php?Empleado_Id=<?=$val['Empleado_Id']?>">Editar</a>

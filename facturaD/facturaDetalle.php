@@ -116,16 +116,7 @@ $productos = $datos->selectProductos();
               <td><?php echo $val['Cantidad']?></td>
               <td><?php echo $val['PrecioVenta']?></td>
               <td>
-                <?php
-                if (condition) {
-                  echo '<a class="btn btn-danger" href="borrarFacturaD.php?FacturasD_Id=<?=$val["FacturasD_Id"]?>&req=delete">Borrar</a>';
-                }else {
-                  # code...
-                }
-                
-                ?>
-
-                
+              <a class="btn btn-danger" href="borrarFacturaD.php?FacturasD_Id=<?=$val["FacturasD_Id"]?>&req=delete">Borrar</a>
               </td>
             </tr>
             <?php

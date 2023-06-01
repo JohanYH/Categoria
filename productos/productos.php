@@ -119,15 +119,7 @@ $proveedor = $datos->selectProveedor();
               <td><?php echo $val['Productos_Nombre']?></td>
               <td><?php echo $val['Descontinuado']?></td>
               <td>
-              <?php
-                if (condition) {
-                  echo '<a class="btn btn-danger" href="borrarProductos.php?Productos_Id=<?=$val["Productos_Id"]?>&req=delete">Borrar</a>';
-                }else {
-                  # code...
-                }
-                
-                ?>
-                
+                <a class="btn btn-danger" href="borrarProductos.php?Productos_Id=<?=$val["Productos_Id"]?>&req=delete">Borrar</a>
               </td>
               <td>
                 <a class="btn btn-warning" href="editarProductos.php?Productos_Id=<?=$val['Productos_Id']?>">Editar</a>

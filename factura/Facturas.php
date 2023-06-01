@@ -114,14 +114,7 @@ $clientes = $datos->selectClientes();
               <td><?php echo $val['Compañia'] ?></td>
               <td><?php echo $val['Fecha'] ?></td>
               <td>
-                <?php
-                if (condition) {
-                  echo '<a class="btn btn-danger" href="borrarFacturas.php?Facturas_Id=<?=$val["Facturas_Id"]?>&req=delete">Borrar</a>';
-                }else {
-                  # code...
-                }
-                ?>
-                
+                <a class="btn btn-danger" href="borrarFacturas.php?Facturas_Id=<?=$val["Facturas_Id"]?>&req=delete">Borrar</a>
               </td>
             </tr>
           </tbody>
