@@ -64,3 +64,13 @@ CREATE TABLE Proveedor(
     Ciudad VARCHAR (100) NOT NULL
 );
 
+CREATE TABLE Users(
+    Id INT PRIMARY KEY AUTO_INCREMENT,
+    IdCamper INT NOT NULL,
+    Email VARCHAR(90) NOT NULL,
+    UserName VARCHAR(70) NOT NULL,
+    Password VARCHAR (72) NOT NULL,
+    FOREIGN KEY (IdCamper) REFERENCES Empleado(Empleado_Id)
+
+)
+
