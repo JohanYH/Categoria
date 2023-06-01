@@ -6,6 +6,9 @@ ini_set("display_startup_errors", 1);
 error_reporting(E_ALL);
 
 require_once("../Config/config.php");
+require_once("../Login/LoginU.php");
+
+session_start();
 
 $datos = new Clientes();
 
@@ -43,7 +46,7 @@ $all = $datos -> selectClienteAll();
       <div class="perfil">
         <h3 style="margin-bottom: 2rem;">Camper Skills.</h3>
         <img src="../images/ana.png" alt="" class="imagenPerfil">
-        <h3>Ana Yamada</h3>
+        <h3><?php echo $_SESSION["UserName"]?></h3>
       </div>
       <div class="menus">
       <a href="../Home/home.php" style="display: flex;gap:2px;">
