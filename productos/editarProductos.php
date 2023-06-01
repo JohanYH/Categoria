@@ -15,7 +15,6 @@ $record = $datos ->selectOneProductos();
 $val = $record[0]; 
 
 $categoria = $datos->selectCategoria();
-
 $proveedor = $datos->selectProveedor();
 
 if (isset($_POST["editar"])) {
@@ -24,12 +23,12 @@ if (isset($_POST["editar"])) {
     $datos->setPrecio_Unitario($_POST["Precio_Unitario"]);
     $datos->setStock($_POST["Stock"]);
     $datos->setUnidadesPedidas($_POST["UnidadesPedidas"]);
-    $datos->setProveedor_Id($_POST["Proveedor_Nombre"]);
+    $datos->setProveedor_Id($_POST["Proveedor_Id"]);
     $datos->setProductos_Nombre($_POST["Productos_Nombre"]);
     $datos->setDescontinuado($_POST["Descontinuado"]);
 
     $datos->updateProductos();
-    /* echo "<script>alert('Los Datos Editados ha sido Exitosamente');document.location='../productos/productos.php'</script>"; */
+    echo "<script>alert('Los Datos Editados ha sido Exitosamente');document.location='../productos/productos.php'</script>";
 }
 
 
