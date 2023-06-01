@@ -72,5 +72,6 @@ CREATE TABLE Users(
     Password VARCHAR (72) NOT NULL,
     FOREIGN KEY (IdCamper) REFERENCES Empleado(Empleado_Id)
 
-)
+);
 
+ALTER TABLE Users ADD tipoUsuario VARCHAR(50);

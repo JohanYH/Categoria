@@ -65,6 +65,19 @@
                 <form action="NewUser.php" method="POST">
                     <h1 class="m-5" style="font-weight: 800;">REGISTRAR USUARIO</h1>
                     <div class="mb-3">
+                    <label for="email" class="form-label">Tipo de Usuarios</label>
+                    <select name="tiposUsuario" id="tiposUsuario" class="form-control">
+                      <option value="Administrador">Administrador</option>
+                      <option value="Usuario">Usuario</option>
+                    </select>
+                        <!-- input 
+                          type="text"
+                          id="Email"
+                          name="Email"
+                          class="form-control"  
+                        /> -->
+                    </div>
+                    <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
                         <input 
                           type="text"

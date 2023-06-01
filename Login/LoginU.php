@@ -74,6 +74,7 @@ class LoginUser extends SuperMarket{
                 $_SESSION['Email'] = $usuario[0]['Email'];
                 $_SESSION['Password'] = $usuario[0]['Password'];
                 $_SESSION['UserName'] = $usuario[0]['UserName'];
+                $_SESSION['tiposUsuario'] = $usuario[0]['tiposUsuario'];
                 return true;
             }else {
                 false;

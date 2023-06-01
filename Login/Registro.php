@@ -15,14 +15,16 @@ class Registrarse extends SuperMarket{
     private $Email;
     private $UserName;
     private $Password;
+    private $tiposUsuario;
 
-    public function __construc($Id = 0, $IdCamper = "", $Email = "", $UserName = "", $Password = "", $dbCnx = "")
+    public function __construc($Id = 0, $IdCamper = "", $Email = "", $UserName = "", $Password = "",$tiposUsuario='', $dbCnx = "")
     {
         $this->Id = $Id;
         $this->IdCamper = $IdCamper;
         $this->Email = $Email;
         $this->UserName = $UserName;
         $this->Password = $Password;
+        $this->tiposUsuario = $tiposUsuario;
         parent::__construc($dbCnx);
 
     }
@@ -67,6 +69,16 @@ class Registrarse extends SuperMarket{
         $this->UserName;
     }
 
+    public function setTipos($tiposUsuario)
+    {
+        $this->tiposUsuario = $tiposUsuario;
+    }
+
+    public function getTipos()
+    {
+        $this->tiposUsuario;
+    }
+
     public function setPassword($Password)
     {
         $this->Password = $Password;
@@ -95,8 +107,8 @@ class Registrarse extends SuperMarket{
     public function insertDatos()
     {
         try {
-            $stm = $this->dbCnx -> prepare("INSERT INTO Users (IdCamper, Email, UserName, Password) values(?,?,?,?)");
-            $stm -> execute([$this->IdCamper,$this->Email,$this->UserName,md5($this->Password)]);
+            $stm = $this->dbCnx -> prepare("INSERT INTO Users (IdCamper, Email, UserName, tiposUsuario, Password) values(?,?,?,?,?)");
+            $stm -> execute([$this->IdCamper,$this->Email,$this->UserName,$this->tiposUsuario,md5($this->Password)]);
 
             $login = new LoginUser();
             $login->setEmail($_POST["Email"]);

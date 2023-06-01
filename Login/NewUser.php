@@ -14,6 +14,7 @@ if (isset($_POST["registrarse"])) {
     $newUser->setIdCamper(1);
     $newUser->setEmail($_POST["Email"]);
     $newUser->setUserName($_POST["UserName"]);
+    $newUser->setTipos($_POST["tiposUsuario"]);
     $newUser->setPassword($_POST["Password"]);
     
     if ($newUser->checkUser($_POST["Email"])) {
