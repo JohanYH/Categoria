@@ -33,7 +33,7 @@ session_start();
 
       <div class="perfil">
         <h3 style="margin-bottom: 2rem;">Camp Skiller.</h3>
-        <img src="images/Diseño sin título.png" alt="" class="imagenPerfil">
+        <img src="../images/ana.png" alt="" class="imagenPerfil">
         <h3><?php echo $_SESSION["UserName"]?></h3>
       </div>
       <div class="menus">
