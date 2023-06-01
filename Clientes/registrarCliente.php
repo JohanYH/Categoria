@@ -7,7 +7,7 @@ error_reporting(E_ALL);
 
 if (isset($_POST["guardar"])) {
     
-    require_once("../config.php");
+    require_once("../Config/config.php");
 
     $clientes = new Clientes();
 
