@@ -71,7 +71,7 @@ if (isset($_POST["editar"])) {
     </div>
 
     <div class="parte-media">
-        <h2 class="m-2">Categoria a Editar</h2>
+        <h2 class="m-2">Cliente a Editar</h2>
       <div class="menuTabla contenedor2">
       <form class="col d-flex flex-wrap" action=""  method="post">
               <div class="mb-1 col-12">
@@ -107,7 +107,7 @@ if (isset($_POST["editar"])) {
     </div>
 
     <div class="parte-derecho " id="detalles">
-      <h3>Detalle Categoria</h3>
+      <h3>Detalle Cliente</h3>
       <p>Cargando...</p>
        <!-- ///////Generando la grafica -->
 
