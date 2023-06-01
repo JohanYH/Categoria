@@ -50,37 +50,38 @@ $all = $datos -> selectClienteAll();
       </div>
       <div class="menus">
       <a href="../Home/home.php" style="display: flex;gap:2px;">
-          <i class="bi bi-house-door"> </i>
-          <h3 style="margin: 0px;">Home</h3>
+          <i class="bi bi-house-door"></i>
+          <h3 style="margin: 4px;">Home</h3>
         </a>
         <a href="../CategoriasCrud/categorias.php" style="display: flex;gap:1px;">
-          <i class="bi bi-people"></i>
-          <h3 style="margin: 0px;font-weight: 800;">Categoria</h3>
+          <i class="bi bi-calendar-plus"></i>
+          <h3 style="margin: 8px;">Categoria</h3>
         </a>
         <a href="#" style="display: flex;gap:1px;">
-          <i class="bi bi-people"></i>
-          <h3 style="margin: 0px;font-weight: 800;">Clientes</h3>
+          <i class="bi bi-person-circle"></i>
+          <h3 style="margin: 8px;font-weight: 800;">Clientes</h3>
         </a>
         <a href="../Empleado/empleado.php" style="display: flex;gap:1px;">
           <i class="bi bi-people"></i>
-          <h3 style="margin: 0px;font-weight: 800;">Empleado</h3>
-        </a>
-        <a href="../factura/Facturas.php" style="display: flex;gap:1px;">
-          <i class="bi bi-people"></i>
-          <h3 style="margin: 0px;font-weight: 800;">Factura</h3>
-        </a>
-        <a href="../facturaD/facturaDetalle.php" style="display: flex;gap:1px;">
-          <i class="bi bi-people"></i>
-          <h3 style="margin: 0px;font-weight: 800;">Factura Detalle</h3>
-        </a>
-        <a href="../productos/productos.php" style="display: flex;gap:1px;">
-          <i class="bi bi-people"></i>
-          <h3 style="margin: 0px;font-weight: 800;">Productos</h3>
+          <h3 style="margin: 8px;">Empleado</h3>
         </a>
         <a href="../proveedor/proveedor.php" style="display: flex;gap:1px;">
-          <i class="bi bi-people"></i>
-          <h3 style="margin: 0px;font-weight: 800;">Proveedor</h3>
+        <i class="bi bi-truck"></i>
+          <h3 style="margin: 8px;">Proveedor</h3>
         </a>
+        <a href="../productos/productos.php" style="display: flex;gap:1px;">
+          <i class="bi bi-shop"></i>
+          <h3 style="margin: 8px;">Productos</h3>
+        </a>
+        <a href="../factura/Facturas.php" style="display: flex;gap:1px;">
+          <i class="bi bi-journal-text"></i>
+          <h3 style="margin: 8px;">Factura</h3>
+        </a>
+        <a href="../facturaD/facturaDetalle.php" style="display: flex;gap:1px;">
+          <i class="bi bi-journals"></i>
+          <h3 style="margin: 8px;">Factura Detalle</h3>
+        </a>
+        
 
        
 
