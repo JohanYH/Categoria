@@ -84,39 +84,6 @@ if (isset($_POST["editar"])) {
                 />
               </div>
               <div class="mb-1 col-12">
-                <label for="Mobile" class="form-label">Proveedor Nombre</label>
-                <input 
-                  type="text"
-                  id="Proveedor_Nombre"
-                  name="Proveedor_Nombre"
-                  class="form-control"
-                  value="<?php echo $val["Proveedor_Nombre"];?>"  
-                 
-                />
-              </div>
-              <div class="mb-1 col-12">
-                <label for="Mobile" class="form-label">Proveedor Nombre</label>
-                <input 
-                  type="text"
-                  id="Proveedor_Nombre"
-                  name="Proveedor_Nombre"
-                  class="form-control"
-                  value="<?php echo $val["Proveedor_Nombre"];?>"  
-                 
-                />
-              </div>
-              <div class="mb-1 col-12">
-                <label for="Mobile" class="form-label">Proveedor Nombre</label>
-                <input 
-                  type="text"
-                  id="Proveedor_Nombre"
-                  name="Proveedor_Nombre"
-                  class="form-control"
-                  value="<?php echo $val["Proveedor_Nombre"];?>"  
-                 
-                />
-              </div>
-              <div class="mb-1 col-12">
                 <label for="Direccion" class="form-label">Telefono</label>
                 <input 
                   type="text"
@@ -127,33 +94,14 @@ if (isset($_POST["editar"])) {
                  
                 />
               </div>
-
               <div class="mb-1 col-12">
-                <label for="Imagen" class="form-label">Proveedor Id</label>
-                <select name="Proveedor Id" id="Proveedor Id" class="form-control">
-
-                
-                </select>
-
-
-
-                <!-- <input 
-                  type="text"
-                  id="Proveedor Id"
-                  name="Proveedor Id"
-                  class="form-control"  
-                  value="<?php echo $val["Ciudad"];?>"
-                 
-                /> -->
-              </div>
-              <div class="mb-1 col-12">
-                <label for="Mobile" class="form-label">Proveedor Nombre</label>
+                <label for="Mobile" class="form-label">Ciudad</label>
                 <input 
                   type="text"
-                  id="Proveedor_Nombre"
-                  name="Proveedor_Nombre"
+                  id="Ciudad"
+                  name="Ciudad"
                   class="form-control"
-                  value="<?php echo $val["Proveedor_Nombre"];?>"  
+                  value="<?php echo $val["Ciudad"];?>"  
                  
                 />
               </div>
