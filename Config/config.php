@@ -350,7 +350,7 @@ require_once("../Config/db.php");
         public function updateEmpleado()
         {
             try {
-                $stm = $this-> dbCnx ->prepare ("UPDATE Empleado SET Mobile = ?, Direccion = ?, Imagen = ? , WHERE Empleado_Id = ?");
+                $stm = $this-> dbCnx ->prepare ("UPDATE Empleado SET Mobile = ?, Direccion = ?, Imagen = ? WHERE Empleado_Id = ?");
                 $stm -> execute([$this->Mobile, $this-> Direccion, $this->Imagen , $this->Empleado_Id ]);
             } catch (Exception $e) {
                 return $e->getMessage();
