@@ -70,12 +70,6 @@
                       <option value="Administrador">Administrador</option>
                       <option value="Usuario">Usuario</option>
                     </select>
-                        <!-- input 
-                          type="text"
-                          id="Email"
-                          name="Email"
-                          class="form-control"  
-                        /> -->
                     </div>
                     <div class="mb-3">
                     <label for="email" class="form-label">Email</label>

@@ -121,7 +121,12 @@ $all = $datos -> selectClienteAll();
               <td><?php echo $val['Celular']?></td>
               <td><?php echo $val['Compañia']?></td>
               <td>
-                <a class="btn btn-danger" href="../Clientes/borrarCliente.php?Cliente_Id=<?=$val['Cliente_Id']?>&req=delete">Borrar</a>
+                <?php if (condition) {
+                  echo '<a class="btn btn-danger" href="../Clientes/borrarCliente.php?Cliente_Id=<?=$val["Cliente_Id"]?>&req=delete">Borrar</a>';
+                }else {
+                  
+                }
+                ?>
               </td>
               <td>
                 <a class="btn btn-warning" href="../Clientes/editarCliente.php?Cliente_Id=<?=$val['Cliente_Id']?>">Editar</a>
